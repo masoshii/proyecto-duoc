@@ -1,0 +1,68 @@
+.intro-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+   
+  
+    background: linear-gradient(to top right,#BDE0FE 30%,#AF7EE7 );
+  }
+
+h1{color: aliceblue;
+  font-weight: bold;
+    margin-right: 310px;
+    font-size: 35px;
+    font-family: 'Open Sans', sans-serif;
+    }
+      
+
+p{color: aliceblue;
+  font-weight: bold;
+  margin-right: 270px;
+  font-size: 24px;
+  margin-top: -10px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.intro-image {
+    width: 100%;
+    max-width: 500px; 
+    height: auto;
+    margin: 0 auto;
+   
+  }
+
+
+  .image-container {
+    position: absolute; 
+    width: 200px; 
+    height: 200px; 
+    overflow: hidden; 
+  }
+  .top-left {
+    top: 30px;
+    left: -80px;
+  }
+  .librosborrosos{
+    width: 100px; 
+    height: 100px; 
+    overflow: hidden;
+  }
+  .bottom-right {
+    bottom: 150px;
+    right: -80px;
+  }
+
+.ingresar-button{
+  font-size: 20px; 
+  text-transform: none;
+  font-weight: bold;
+    --padding-start: 130px; 
+    --padding-end: 130px; 
+    --padding-top: 20px; 
+    --padding-bottom: 20px;  
+   
+    
+}

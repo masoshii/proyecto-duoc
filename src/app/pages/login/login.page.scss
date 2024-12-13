@@ -1,0 +1,102 @@
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+   
+  
+    background: linear-gradient(to top right,#BDE0FE 30%,#AF7EE7 );
+  }
+  p{   
+    color: gray;
+    font-weight: bold;
+      margin-right: 130px;
+      margin-bottom:-31px ;
+      font-size: 14px;
+      font-family: 'Open Sans', sans-serif;}
+ 
+ 
+      h1{color: aliceblue;
+    font-weight: bold;
+      margin-right: 280px;
+      font-size: 35px;
+      font-family: 'Open Sans', sans-serif;
+      }
+
+  .image-container {
+    position: absolute; 
+    width: 200px; 
+    height: 200px; 
+    overflow: hidden; 
+  }
+  .top-left {
+    top: 30px;
+    left: -80px;
+  }
+  .librosborrosos{
+    width: 120px; 
+    height: 120px; 
+    overflow: hidden;
+  }
+  .bottom-right {
+    bottom: 10px;
+    right: -70px;
+  }
+
+  
+  ion-item {
+    
+    --box-shadow: none; 
+    color: black
+    
+  }
+  
+  .registro{
+    text-transform: none;
+    font-weight: bold;
+    font-size: 14px;
+      font-family: 'Open Sans', sans-serif;
+    margin-right: -110px;
+    --background: transparent; 
+    --box-shadow: none; 
+    color: blue
+
+  }
+
+
+  .recovery{
+    text-transform: none;
+    font-weight: bold;
+    font-size: 14px;
+      font-family: 'Open Sans', sans-serif;
+    margin-right: -140px;
+    margin-bottom:-42px ;
+    --background: transparent; 
+    --box-shadow: none; 
+    color: blue
+
+  }
+
+  form ion-item {
+    margin-bottom: 16px; 
+    --padding-start: 120px;
+
+  }
+
+    ion-label{
+      opacity: 0.6;
+      
+    }
+
+    .login-button{
+      
+      font-size: 20px; 
+  text-transform: none;
+  font-weight: bold;
+    --padding-start: 110px; 
+    --padding-end: 110px; 
+    --padding-top: 20px; 
+    --padding-bottom: 20px;  
+    margin-top: 50px;
+    }

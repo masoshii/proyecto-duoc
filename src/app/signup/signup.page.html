@@ -1,0 +1,136 @@
+<ion-buttons slot="start">
+  <ion-back-button class="back-button" defaultHref="/login" icon="arrow-undo-outline"></ion-back-button>
+</ion-buttons>
+
+<ion-content>
+  <div class="signup-container">
+    <div class="image-container top-left">
+      <img src="assets/graduadoslibros.png" class="libro-image" alt="Imagen 1">
+    </div>
+
+    <h1>Bienvenido selecciona tu cuenta</h1>
+
+    <!-- Selector de rol (visible solo al inicio) -->
+    <div *ngIf="!isRoleSelected"class="role-selection-container">
+      <ion-item>
+        <ion-radio-group [(ngModel)]="selectedRole" (ionChange)="onRoleChange($event)">
+          <ion-item  class="rol-item">
+            <ion-label>Profesor</ion-label><ion-icon name="accessibility-sharp" slot="start"></ion-icon>
+            <ion-radio slot="start" value="profesor"></ion-radio>
+          </ion-item>
+          <ion-item class="rol-item">
+            <ion-label>Alumno</ion-label><ion-icon name="accessibility-sharp" slot="start"></ion-icon>
+            <ion-radio slot="start" value="alumno"></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+      </ion-item>
+    </div>
+
+    <!-- Formulario completo (visible solo después de seleccionar el rol) -->
+    <form *ngIf="isRoleSelected" (submit)="registerUser()">
+      <ion-button  class="refresh-button"  expand="block" (click)="resetRole()"><ion-icon class="atras-rol" name="caret-back-sharp"></ion-icon></ion-button>
+      <!-- Correo Electrónico -->
+      <ion-item>
+        <ion-label position="floating">Correo Electrónico</ion-label>  <ion-icon name="mail-sharp" slot="start"></ion-icon>
+        <ion-input type="email" [(ngModel)]="email" name="email" required></ion-input>
+      </ion-item>
+
+      <!-- Nombre de Usuario -->
+      <ion-item>
+        <ion-label position="floating">Nombre de Usuario</ion-label> <ion-icon name="person" slot="start"></ion-icon> 
+        <ion-input type="text" [(ngModel)]="username" name="username" required></ion-input>
+      </ion-item>
+
+        <!-- RUT -->
+        <ion-item>
+          <ion-label position="floating">RUT</ion-label><ion-icon name="finger-print-sharp" slot="start"></ion-icon>
+          <ion-input type="text" [(ngModel)]="rut" name="rut" required></ion-input>
+        </ion-item>
+  
+        
+  
+        <ion-item>
+          <ion-label>Región</ion-label><ion-icon name="earth-sharp"  slot="start"></ion-icon>
+          <ion-select [(ngModel)]="selectedRegion" (ionChange)="onRegionChange($event)" placeholder="Selecciona una región">
+            <ion-select-option *ngFor="let region of regiones" [value]="region.name">
+              {{ region.name }}
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+    
+        <!-- Selección de Comuna -->
+        <ion-item>
+          <ion-label>Comuna</ion-label><ion-icon name="locate-sharp" slot="start"></ion-icon>
+          <ion-select [(ngModel)]="selectedComuna" placeholder="Selecciona una comuna" [disabled]="!comunas.length">
+            <ion-select-option *ngFor="let comuna of comunas" [value]="comuna">
+              {{ comuna }}
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+  
+        <!-- Colegio -->
+        <ion-item>
+          <ion-label position="floating">Colegio</ion-label><ion-icon name="school-sharp" slot="start"></ion-icon>
+          <ion-input type="text" [(ngModel)]="colegio" name="colegio" required></ion-input>
+        </ion-item>
+  
+
+      <!-- Campos específicos por rol-->
+      <div [ngSwitch]="selectedRole">
+        <!-- Campos para Alumnos -->
+        <ion-item *ngSwitchCase="'alumno'">
+          <ion-label position="floating">Curso</ion-label><ion-icon name="library-sharp" slot="start"></ion-icon>
+          <ion-input type="text" [(ngModel)]="curso" name="curso"></ion-input>
+        </ion-item>
+
+        <!-- Campos para Profesores -->
+         <!-- cantidad alumnos -->
+         <ion-item *ngSwitchCase="'profesor'">
+          <ion-label position="floating">cantidad alumnos</ion-label><ion-icon name="person-add-sharp"slot="start"></ion-icon>
+          <ion-input type="text" [(ngModel)]="cantalumnos" name="cantalumnos" required></ion-input>
+        </ion-item>
+
+
+        <ion-item *ngSwitchCase="'profesor'">
+          <ion-label position="floating">Asignatura</ion-label><ion-icon name="bookmarks-sharp" slot="start"></ion-icon>
+          <ion-input type="text" [(ngModel)]="asignatura" name="asignatura"></ion-input>
+        </ion-item>
+      </div>
+
+      <!-- Tipo de Establecimiento -->
+      <ion-item>
+        <ion-label position="floating">Tipo de Establecimiento</ion-label><ion-icon name="business-sharp"slot="start" ></ion-icon>
+        <ion-select [(ngModel)]="tipoEstablecimiento" name="tipoEstablecimiento" required>
+          <ion-select-option value="colegio">Público</ion-select-option>
+          <ion-select-option value="instituto">Privado</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <!-- Contraseña -->
+      <ion-item>
+        <ion-label position="floating">Contraseña</ion-label><ion-icon name="alert-sharp" slot="start"></ion-icon>
+        <ion-input [type]="passwordType" [(ngModel)]="password" name="password" required>
+          <ion-icon [name]="passwordType === 'password' ? 'eye-off' : 'eye'" slot="end" (click)="togglePasswordVisibility()"></ion-icon>
+        </ion-input>
+      </ion-item>
+
+      <!-- Confirmar Contraseña -->
+      <ion-item>
+        <ion-label position="floating">Confirmar Contraseña</ion-label><ion-icon name="alert-sharp" slot="start"></ion-icon>
+        <ion-input [type]="passwordType" [(ngModel)]="confirmPassword" name="confirmPassword" required></ion-input>
+      </ion-item>
+
+      <!-- Botón de registro -->
+      <ion-button class="signup-button" color="light" expand="block" type="submit" shape="round">Registrarse</ion-button>
+      
+
+    </form>
+
+    <div class="image-container bottom-right">
+      <img src="assets/librosborrosos.png" class="librosborrosos" alt="Imagen 4">
+    </div>
+  </div>
+</ion-content>
+
+
+

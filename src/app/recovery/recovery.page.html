@@ -1,0 +1,32 @@
+
+
+<ion-buttons slot="start">
+  <ion-back-button class="back-button"   defaultHref="/login" icon="arrow-undo-outline"></ion-back-button>
+</ion-buttons>
+<ion-content>
+  <div class="recovery-container">
+    <div class="image-container top-left">
+      <img src="assets/graduadoslibros.png" class="libro-image" alt="Imagen 1">
+    </div>
+    
+    <div class="image-container bottom-right">
+      <img src="assets/librosborrosos.png" class="librosborrosos" alt="Imagen 4">
+    </div>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Recuperación de Contraseña</ion-card-title>
+      </ion-card-header>
+      
+      <ion-card-content>
+        <ion-item>
+        
+          <ion-input type="email" [(ngModel)]="email" placeholder="Ingresa tu correo" required></ion-input>
+        </ion-item>
+        <ion-button expand="block" (click)="recoverPassword()">Enviar</ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  
+
+</ion-content>

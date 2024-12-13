@@ -1,0 +1,42 @@
+.recovery-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+   
+  
+    background: linear-gradient(to top right,#BDE0FE 30%,#AF7EE7 );
+  }
+
+  .back-button{
+    --background: transparent; 
+    --border: none;
+    --padding: 0; 
+    --margin: 0; 
+    
+  }
+  ion-buttons{
+
+    background: linear-gradient(to right ,#BDE0FE 30%,#AF7EE7 );
+  }
+
+.image-container {
+    position: absolute; 
+    width: 200px; 
+    height: 200px; 
+    overflow: hidden; 
+  }
+  .top-left {
+    top: 30px;
+    left: -80px;
+  }
+  .librosborrosos{
+    width: 120px; 
+    height: 120px; 
+    overflow: hidden;
+  }
+  .bottom-right {
+    bottom: 10px;
+    right: -70px;
+  }

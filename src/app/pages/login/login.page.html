@@ -1,0 +1,48 @@
+
+
+<ion-content>
+   <div class="login-container">
+
+    <div class="image-container top-left">
+      <img src="assets/graduadoslibros.png" class="libro-image" alt="Imagen 1">
+    </div>
+    <h1  >Hola!</h1>
+    <form (submit)="loginPage()">
+      <ion-item>
+        <ion-label   position="floating">Usuario</ion-label>
+        <ion-input 
+          type="text" 
+          [(ngModel)]="identifier" 
+          name="identifier" 
+          required>
+        </ion-input>
+      </ion-item>
+
+    <ion-item>     
+      <ion-label position="floating">Contraseña</ion-label>
+        <ion-input 
+          [type]="passwordType"
+          [(ngModel)]="password"
+          name="password"
+          required>
+          <ion-icon 
+            [name]="passwordType === 'password' ? 'eye-off' : 'eye'" 
+            slot="end"
+            (click)="togglePasswordVisibility()">
+      </ion-icon>
+      
+      </ion-input>
+    </ion-item>
+    <ion-button   class="recovery" expand="block"  shape="round" (click)="goToRecovery()"> ingresa aqui</ion-button>
+    <p>Problemas con la contrasena? </p>
+    <ion-button  class="login-button"  color="light"  expand="block" type="submit" shape="round" >Ingresar</ion-button>
+   </form>
+   <div class="image-container bottom-right">
+    <img src="assets/librosborrosos.png" class="librosborrosos" alt="Imagen 4">
+  </div>
+  
+  <p>No tienes cuenta?</p>
+  <ion-button   class="registro" expand="block"  shape="round" (click)="goToRegister()"> Regístrate aqui</ion-button>
+  
+  </div>
+</ion-content>

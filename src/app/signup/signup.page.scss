@@ -1,0 +1,110 @@
+.signup-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+   
+  
+    background: linear-gradient(to top right,#BDE0FE 30%,#AF7EE7 );
+  }
+  
+.back-button{
+  --background: transparent; 
+  --border: none;
+  --padding: 0; 
+  --margin: 0; 
+ 
+}
+
+.role-selection-container {
+  margin-bottom: 900px;
+  
+}
+.rol-item {
+  margin-bottom: 10px; 
+  
+}
+ion-icon {
+   
+  color: #AF7EE7; 
+}
+.refresh-button {
+  --background: transparent;
+  --color:black;
+  width: 50px; 
+  height: 50px;
+  margin-left: 140px;
+}
+.image-container {
+  position: absolute; 
+  width: 200px; 
+  height: 200px; 
+  overflow: hidden; 
+  
+}
+.top-left {
+  top: 30px;
+  left: -80px;
+}
+.librosborrosos{
+  width: 120px; 
+  height: 120px; 
+  overflow: hidden;
+}
+.bottom-right {
+  bottom: -260px;
+  right: -70px;
+}
+
+ion-item {
+  --background: white;
+  
+  --border-radius: 10px; 
+  margin-bottom: 20px; 
+  padding: 10px; 
+  --padding-start: 15px;
+  --padding-end: 15px;
+}
+  
+
+  
+  ion-input {
+    --background: transparent; 
+  }
+  
+  ion-buttons{
+
+    background: linear-gradient(to right ,#BDE0FE 30%,#AF7EE7 );
+  }
+
+  .horizontal-fields {
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between; 
+    width: 100%; 
+    gap: 10px; 
+  }
+  
+  .input-item {
+    flex: 1; 
+  }
+
+  .signup-button{
+      
+    font-size: 20px; 
+text-transform: none;
+font-weight: bold;
+  --padding-start: 100px; 
+  --padding-end: 100px; 
+  --padding-top: 20px; 
+  --padding-bottom: 20px;  
+ 
+  }
+  h1{color: aliceblue;
+    font-weight: bold;
+      margin-right: 10px;
+      font-size: 30px;
+      font-family: 'Open Sans', sans-serif;
+    
+      }

@@ -1,0 +1,19 @@
+:host {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    background: linear-gradient(to top right,#BDE0FE 30%,#AF7EE7 );
+    text-align: center;
+  }
+  button {
+    font-size: 30px; 
+    text-transform: none;
+    font-weight: bold;
+      --padding-start: 130px; 
+      --padding-end: 130px; 
+      --padding-top: 20px; 
+      --padding-bottom: 20px;  
+  }
